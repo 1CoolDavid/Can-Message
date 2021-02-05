@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-D:/Programming/CLionProjects/Can-Message/lib/binmatrix.c
-binmatrix.h
-D:/Programming/CLionProjects/Can-Message/lib/binmatrix.h
-stdio.h
--
-stdbool.h
--
-string.h
--
-math.h
--
-malloc.h
--
-
 D:/Programming/CLionProjects/Can-Message/lib/binmatrix.h
 stdbool.h
 -
@@ -29,4 +15,10 @@ string.h
 D:/Programming/CLionProjects/Can-Message/main.c
 lib/binmatrix.h
 D:/Programming/CLionProjects/Can-Message/lib/binmatrix.h
+stdio.h
+-
+malloc.h
+-
+ctype.h
+-
 
