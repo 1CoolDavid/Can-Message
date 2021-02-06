@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "D:/Programming/CLionProjects/Can-Message/lib/binmatrix.c" "D:/Programming/CLionProjects/Can-Message/cmake-build-debug/CMakeFiles/Can_Message.dir/lib/binmatrix.c.obj"
-  "D:/Programming/CLionProjects/Can-Message/main.c" "D:/Programming/CLionProjects/Can-Message/cmake-build-debug/CMakeFiles/Can_Message.dir/main.c.obj"
+  "C:/Users/david/Documents/Github/Can-Message/Can-Message/lib/binmatrix.c" "C:/Users/david/Documents/Github/Can-Message/Can-Message/cmake-build-debug/CMakeFiles/Can_Message.dir/lib/binmatrix.c.obj"
+  "C:/Users/david/Documents/Github/Can-Message/Can-Message/main.c" "C:/Users/david/Documents/Github/Can-Message/Can-Message/cmake-build-debug/CMakeFiles/Can_Message.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

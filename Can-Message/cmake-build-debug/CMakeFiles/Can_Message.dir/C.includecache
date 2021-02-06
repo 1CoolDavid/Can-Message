@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-D:/Programming/CLionProjects/Can-Message/lib/binmatrix.h
+C:/Users/david/Documents/Github/Can-Message/Can-Message/lib/binmatrix.h
 stdbool.h
 -
 string.h
 -
 
-D:/Programming/CLionProjects/Can-Message/main.c
+C:/Users/david/Documents/Github/Can-Message/Can-Message/main.c
 lib/binmatrix.h
-D:/Programming/CLionProjects/Can-Message/lib/binmatrix.h
+C:/Users/david/Documents/Github/Can-Message/Can-Message/lib/binmatrix.h
 stdio.h
 -
 malloc.h

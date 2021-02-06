@@ -62,10 +62,10 @@ RM = "D:\Programs\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Programming\CLionProjects\Can-Message
+CMAKE_SOURCE_DIR = C:\Users\david\Documents\Github\Can-Message\Can-Message
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Programming\CLionProjects\Can-Message\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\david\Documents\Github\Can-Message\Can-Message\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Can_Message.dir/depend.make
@@ -78,29 +78,29 @@ include CMakeFiles/Can_Message.dir/flags.make
 
 CMakeFiles/Can_Message.dir/main.c.obj: CMakeFiles/Can_Message.dir/flags.make
 CMakeFiles/Can_Message.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Programming\CLionProjects\Can-Message\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Can_Message.dir/main.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Can_Message.dir\main.c.obj   -c D:\Programming\CLionProjects\Can-Message\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\david\Documents\Github\Can-Message\Can-Message\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Can_Message.dir/main.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Can_Message.dir\main.c.obj   -c C:\Users\david\Documents\Github\Can-Message\Can-Message\main.c
 
 CMakeFiles/Can_Message.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Can_Message.dir/main.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Programming\CLionProjects\Can-Message\main.c > CMakeFiles\Can_Message.dir\main.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\david\Documents\Github\Can-Message\Can-Message\main.c > CMakeFiles\Can_Message.dir\main.c.i
 
 CMakeFiles/Can_Message.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Can_Message.dir/main.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Programming\CLionProjects\Can-Message\main.c -o CMakeFiles\Can_Message.dir\main.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\david\Documents\Github\Can-Message\Can-Message\main.c -o CMakeFiles\Can_Message.dir\main.c.s
 
 CMakeFiles/Can_Message.dir/lib/binmatrix.c.obj: CMakeFiles/Can_Message.dir/flags.make
 CMakeFiles/Can_Message.dir/lib/binmatrix.c.obj: ../lib/binmatrix.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Programming\CLionProjects\Can-Message\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Can_Message.dir/lib/binmatrix.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Can_Message.dir\lib\binmatrix.c.obj   -c D:\Programming\CLionProjects\Can-Message\lib\binmatrix.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\david\Documents\Github\Can-Message\Can-Message\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Can_Message.dir/lib/binmatrix.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Can_Message.dir\lib\binmatrix.c.obj   -c C:\Users\david\Documents\Github\Can-Message\Can-Message\lib\binmatrix.c
 
 CMakeFiles/Can_Message.dir/lib/binmatrix.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Can_Message.dir/lib/binmatrix.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Programming\CLionProjects\Can-Message\lib\binmatrix.c > CMakeFiles\Can_Message.dir\lib\binmatrix.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\david\Documents\Github\Can-Message\Can-Message\lib\binmatrix.c > CMakeFiles\Can_Message.dir\lib\binmatrix.c.i
 
 CMakeFiles/Can_Message.dir/lib/binmatrix.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Can_Message.dir/lib/binmatrix.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Programming\CLionProjects\Can-Message\lib\binmatrix.c -o CMakeFiles\Can_Message.dir\lib\binmatrix.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\david\Documents\Github\Can-Message\Can-Message\lib\binmatrix.c -o CMakeFiles\Can_Message.dir\lib\binmatrix.c.s
 
 # Object files for target Can_Message
 Can_Message_OBJECTS = \
@@ -116,7 +116,7 @@ Can_Message.exe: CMakeFiles/Can_Message.dir/build.make
 Can_Message.exe: CMakeFiles/Can_Message.dir/linklibs.rsp
 Can_Message.exe: CMakeFiles/Can_Message.dir/objects1.rsp
 Can_Message.exe: CMakeFiles/Can_Message.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Programming\CLionProjects\Can-Message\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Can_Message.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\david\Documents\Github\Can-Message\Can-Message\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Can_Message.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Can_Message.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -129,6 +129,6 @@ CMakeFiles/Can_Message.dir/clean:
 .PHONY : CMakeFiles/Can_Message.dir/clean
 
 CMakeFiles/Can_Message.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Programming\CLionProjects\Can-Message D:\Programming\CLionProjects\Can-Message D:\Programming\CLionProjects\Can-Message\cmake-build-debug D:\Programming\CLionProjects\Can-Message\cmake-build-debug D:\Programming\CLionProjects\Can-Message\cmake-build-debug\CMakeFiles\Can_Message.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\david\Documents\Github\Can-Message\Can-Message C:\Users\david\Documents\Github\Can-Message\Can-Message C:\Users\david\Documents\Github\Can-Message\Can-Message\cmake-build-debug C:\Users\david\Documents\Github\Can-Message\Can-Message\cmake-build-debug C:\Users\david\Documents\Github\Can-Message\Can-Message\cmake-build-debug\CMakeFiles\Can_Message.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Can_Message.dir/depend
 

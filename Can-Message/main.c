@@ -70,7 +70,7 @@ bool **read_complex_matrix_string(FILE *fp, int *r, int *c){
     return matrix;
 }
 
-bool **read_matrix_string(FILE *fp, int *r) {
+char *read_and_convert_matrix_string(FILE *fp, int *r) {
     fp = fopen("../input.txt", "r");
     char dimBuf[2];
     *r = -1;
@@ -108,10 +108,12 @@ bool **read_matrix_string(FILE *fp, int *r) {
         }
     }
 
-    return output;
+    char *word = bin_matrix_to_string(output, *r);
+
+    return word;
 }
 
-bool** read_string(FILE *fp) {
+bool **read_and_convert_string(FILE *fp, int *rows) {
     fp = fopen("../input.txt", "r");
     char buffer[20];
     char current;
@@ -125,11 +127,11 @@ bool** read_string(FILE *fp) {
         i++;
     }
     buffer[i] = '\0';
-    int rows = strlen(buffer);
+    *rows = strlen(buffer);
 
-    bool **matrix = malloc(sizeof(bool *) * rows);
+    bool **matrix = malloc(sizeof(bool *) * *rows);
 
-    for(int i = 0; i<rows; i++) {
+    for(int i = 0; i<*rows; i++) {
         matrix[i] = malloc(sizeof(bool) * 8);
     }
 
@@ -138,15 +140,35 @@ bool** read_string(FILE *fp) {
     return matrix;
 }
 
+void write_string(FILE *fp, char *string) {
+    fp = fopen("../output.txt", "w");
+    fputs(string, fp);
+    fclose(fp);
+}
+
+void write_simple_matrix(FILE *fp, bool **matrix, int row) {
+    fp = fopen("../output.txt", "w");
+    for(int i = 0; i<row; i++) {
+        for(int j = 0; j<8; j++) {
+            char output = matrix[i][j] ? '1' : '0';
+            fputc(output, fp);
+        }
+    }
+    fclose(fp);
+}
 
 
 int main() {
     FILE *fptr;
     int row = 0;
 
-    bool **output = read_string(fptr);
+    bool **output = read_and_convert_string(fptr, &row);
+    write_simple_matrix(fptr, output, row);
+
 
 //    bool **matrix = read_matrix_string(fptr, &row);
 //    char *string = bin_matrix_to_string(matrix, row);
+    free(fptr);
+    free(output);
     return  0;
 }
