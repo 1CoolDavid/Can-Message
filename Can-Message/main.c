@@ -6,7 +6,7 @@
 
 bool **read_complex_matrix_string(FILE *fp, int *r, int *c){
     char dimBuf[5];
-    fp = fopen("../input.txt", "a+");
+
     if(fp == NULL) {
         return NULL;
     }
@@ -67,11 +67,11 @@ bool **read_complex_matrix_string(FILE *fp, int *r, int *c){
     *r = row;
     *c = col;
 
+    free(matrixBuf);
     return matrix;
 }
 
 char *read_and_convert_matrix_string(FILE *fp, int *r) {
-    fp = fopen("../input.txt", "r");
     char dimBuf[2];
     *r = -1;
 
@@ -86,10 +86,11 @@ char *read_and_convert_matrix_string(FILE *fp, int *r) {
         int entry = dimBuf[i] - '0';
         *r = ((*r == -1) ? entry : *r + entry*10);
     }
+
     if(fgetc(fp) == '\n') {
-        fseek(fp, sizeof(dimBuf) + sizeof(char), SEEK_SET);
+        fseek(fp, sizeof(dimBuf) + 4*sizeof(char), SEEK_SET); // 4/3 * sizeof(char) account for M line
     } else {
-        fseek(fp, sizeof(dimBuf), SEEK_SET);
+        fseek(fp, sizeof(dimBuf) + 3*sizeof(char), SEEK_SET);
     }
 
     char matrixBuf[(*r * 8)];
@@ -114,7 +115,6 @@ char *read_and_convert_matrix_string(FILE *fp, int *r) {
 }
 
 bool **read_and_convert_string(FILE *fp, int *rows) {
-    fp = fopen("../input.txt", "r");
     char buffer[20];
     char current;
     int i = 0;
@@ -162,13 +162,20 @@ int main() {
     FILE *fptr;
     int row = 0;
 
-    char *output = read_and_convert_matrix_string(fptr, &row);
-    write_string(fptr, output);
-
-
-//    bool **matrix = read_matrix_string(fptr, &row);
-//    char *string = bin_matrix_to_string(matrix, row);
+    fptr = fopen("../input.txt", "r");
+    if(fgetc(fptr) == 'M') {
+        fseek(fptr, sizeof(char)*3, SEEK_SET); // Account for M, \n and point to next line
+        char *output = read_and_convert_matrix_string(fptr, &row);
+        printf(output);
+        write_string(fptr, output);
+        free(output);
+    } else {
+        fseek(fptr, sizeof(char)*3, SEEK_SET); // Account for W, \n and point to next line
+        bool **matrix = read_and_convert_string(fptr, &row);
+        write_simple_matrix(fptr, matrix, row);
+        free(matrix);
+    }
     free(fptr);
-    free(output);
+
     return  0;
 }

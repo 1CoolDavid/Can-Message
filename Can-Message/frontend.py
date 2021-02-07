@@ -1,4 +1,7 @@
+import subprocess
 import tkinter as tk
+import os
+
 
 def onClick(id):
     btn = list(l.keys())[id]
@@ -10,15 +13,30 @@ def onClick(id):
         l[btn] = True
 
 def translate():
-    if(input_entry.get() == ""):
-        input_entry.insert(0, "Becca")
-    else:
+    word = input_entry.get()
+    if word != "":
+        rows = len(word)
+
         l.clear()
         # Maybe use l.key() to remove individual widgets or know when to add widgets instead of resetting each time
         for widget in grid_frame.winfo_children():
             widget.destroy()
 
-        for i in range(3):
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, 'cmake-build-debug')
+        f = open("input.txt", "w")
+        f.write("W\n")
+        f.write(word)
+        f.close()
+        command = r"cd " + filename
+        os.chdir(filename)
+        os.system("Can_Message")
+        os.chdir(filename + r"\..")
+        f = open("output.txt", "r")
+
+        matrix_string = f.readline()
+
+        for i in range(rows):
             for j in range(0, 8):
                 frame = tk.Frame(
                     master=grid_frame,
@@ -27,10 +45,36 @@ def translate():
                 )
                 frame.grid(row=i, column=j, padx=2, pady=2)
                 data = (i*8) + j
-                btn = tk.Button(master=frame, height=5, width=5, bg="orange", command = lambda index=data: onClick(index))
+                value = matrix_string[data] == "1"
+                btn = tk.Button(master=frame, height=5, width=5, bg="red" if value else "orange", command=lambda index=data: onClick(index))
                 btn.pack(padx=2, pady=2)
-                l[btn] = False
-        grid_frame.pack()
+                l[btn] = matrix_string[data] == "1"
+        # grid_frame.pack()
+    else:
+        f = open("input.txt", "w")
+        f.write("M\n")
+
+        grid_children = grid_frame.winfo_children()
+        row = int(len(grid_children)/8)
+        f.write(f"{row}\n")
+        for children in grid_frame.winfo_children():
+            value = l[children.winfo_children()[0]]
+            if value:
+                f.write("1")
+            else:
+                f.write("0")
+        f.close()
+
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, 'cmake-build-debug')
+        command = r"cd " + filename
+        os.chdir(filename)
+        os.system("Can_Message")
+        os.chdir(filename + r"\..")
+        f = open("output.txt", "r")
+
+        output = f.readline()
+        input_entry.insert(0, output)
 
 
 window = tk.Tk()
@@ -52,7 +96,6 @@ input_label.pack(side=tk.LEFT)
 
 input_entry = tk.Entry(master=input_frame, font="Helvetica 14", width=10, justify="center")
 input_entry.pack(pady=5)
-
 
 global l
 l = {}
