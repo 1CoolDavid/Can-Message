@@ -162,8 +162,8 @@ int main() {
     FILE *fptr;
     int row = 0;
 
-    bool **output = read_and_convert_string(fptr, &row);
-    write_simple_matrix(fptr, output, row);
+    char *output = read_and_convert_matrix_string(fptr, &row);
+    write_string(fptr, output);
 
 
 //    bool **matrix = read_matrix_string(fptr, &row);
